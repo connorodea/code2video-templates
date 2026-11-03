@@ -110,7 +110,7 @@ See [`anime-triple-split/README.md`](anime-triple-split/README.md).
 
 <img src="https://s3.varg.ai/files/194b94d0-58ff-4e8b-91de-4f1959d04013/file_5e78548332d5.gif" width="270" alt="Highlights of a 99 s anime music video made with this workflow">
 
-The workflow behind a 99 s, 36-shot anime music video, as an agent skill with scripts: a song map (beats, downbeats, word timings), a five-move story on the beat grid, character and location anchors, short Seedance scenes with QA, a frame-exact cut on the song, lyrics and graphics in HyperFrames, director rounds, and a small export for Telegram.
+The workflow behind a 99 s, 36-shot anime music video (skill maintained in [vargHQ/skills](https://github.com/vargHQ/skills/tree/main/varg-music-video), scripts here): a song map (beats, downbeats, word timings), a five-move story on the beat grid, character and location anchors, short Seedance scenes with QA, a frame-exact cut on the song, lyrics and graphics in HyperFrames, director rounds, and a small export for Telegram.
 
 ```bash
 python3 varg-music-video/scripts/songmap.py assets/song.mp3 --lyrics lyrics.txt --out songmap.json

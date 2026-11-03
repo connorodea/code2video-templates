@@ -5,16 +5,13 @@
 How to make an AI music video with varg, from a song to a finished 9:16 clip: song map → story → storyboard on
 the beat grid → character/vehicle/location anchors → short Seedance scenes → QA → frame-exact cut on the song →
 lyrics and graphics in HyperFrames → director rounds → export. Written from a 99 s, 36-shot anime music video
-(133.8 BPM, nine rounds of director notes). It is an agent skill (`SKILL.md`) with references and four scripts.
+(133.8 BPM, nine rounds of director notes). This folder holds four scripts; the agent skill is maintained in
+[vargHQ/skills](https://github.com/vargHQ/skills/tree/main/varg-music-video)
+(`npx skills add vargHQ/skills --skill varg-music-video`), with this video as its `references/anime-case-study.md`.
 
 | file | what |
 |---|---|
-| `SKILL.md` | the pipeline in 10 steps + the hard rules that each cost a retake |
-| `references/song-map.md` | beats, downbeats, sections, word timings; cutting on the grid |
-| `references/story.md` | five-move story for a song, lyrics → literal pictures, storyboard schema |
-| `references/generation.md` | anchors, Seedance 2.5 runs and modes, the prompt template, credits, QA checklist |
-| `references/edit-and-graphics.md` | `place.json` cut format, lip-sync, HyperFrames layers and gotchas |
-| `references/review-loop.md` | director rounds: real notes and the fix that worked; delivery |
+| `SKILL.md` | a pointer to the maintained skill in vargHQ/skills + how to run the scripts |
 | `scripts/songmap.py` | song → `songmap.json` (tempo + phase fit per 8 s window, beat_track, downbeats, optional faster-whisper words) |
 | `scripts/rough_cut.py` | storyboard + `place.json` → frame-exact cut with the song (segments, slow-mo, freeze frames, tints; warns when a clip is too short) |
 | `scripts/contact_sheet.sh` | timestamped contact sheet for QA of every generation and render |

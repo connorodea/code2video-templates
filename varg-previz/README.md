@@ -5,12 +5,13 @@
 Plan and pre-visualise a multi-shot AI video before spending credits: write the story, lock character / vehicle /
 location sheets, group shots into master scenes, block every camera in a **three.js grey-box previz** on the
 timeline, then export clean previz clips as `@video1` references for **Seedance 2.5 video-to-video** and generate
-one short run per scene. Built on a 36-shot, 99 s anime music video and tested on a 6-shot product ad. It is an
-agent skill (`SKILL.md`) plus the previz app.
+one short run per scene. Built on a 36-shot, 99 s anime music video and tested on a 6-shot product ad. The agent
+skill is maintained in [vargHQ/skills](https://github.com/vargHQ/skills/tree/main/varg-previz)
+(`npx skills add vargHQ/skills --skill varg-previz`); this folder holds the previz app and a snapshot of the references.
 
 | path | what |
 |---|---|
-| `SKILL.md` | the pipeline (story → storyboard → anchors → master scenes → previz → Seedance pack) and the hard rules |
+| `SKILL.md` | a pointer to the maintained skill in vargHQ/skills + how to run the app |
 | `references/story-structure.md` | Hero's Journey, hook-problem-payoff, 3-act mapped onto song sections or seconds |
 | `references/character-sheets.md` | character / product / vehicle sheets, master plates from previz renders, still QA |
 | `references/scene-grouping.md` | grouping shots by location into 4–11 s runs, naming, the scene table |

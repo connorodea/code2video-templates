@@ -65,8 +65,10 @@ Load these skills first; each step names its source of truth:
 
 - `varg-ai` (models, prices, API). **Run its version check first**: an old copy pointed at outdated models.
   Model ids come from https://varg.ai/models/llms.txt or `varg-ai/references/models.md`, never from memory.
-- `varg-previz` (this repo, `../varg-previz/`): story → anchors → three.js previz → Seedance v2v packs.
-- `varg-music-video` (this repo, `../varg-music-video/`): song map, beat grid, stills first, lip-sync.
+- `varg-previz` (`npx skills add vargHQ/skills --skill varg-previz`; its app and scripts are also in this repo,
+  `../varg-previz/`): story → anchors → three.js previz → Seedance v2v packs.
+- `varg-music-video` (`npx skills add vargHQ/skills --skill varg-music-video`; its scripts are in this repo,
+  `../varg-music-video/scripts/`): song map, beat grid, stills first, lip-sync.
 - `hyperframes` (edit, captions, inserts, render).
 - How-to pages: https://varg.ai/how-to/make-an-ai-short-film.md and https://varg.ai/how-to/make-an-ai-music-video.md
 

@@ -20,8 +20,9 @@ stamp-carousel/        # iPhone stamp swipe of the user's pictures, background +
                        #   Skill: .claude/skills/stamp-carousel
 anime-jp-subtitles/    # Japanese anime captions (fansub+karaoke, telop, tategaki, katakana SFX). Python + HyperFrames, local.
 anime-triple-split/    # Manga three-panel split screen on the beat. Python + HyperFrames, local, no credits
-varg-music-video/      # Skill + scripts: song map, beat-grid storyboard, Seedance scenes, frame-exact cut, graphics (credits)
-varg-previz/           # Skill + three.js grey-box previz app -> Seedance 2.5 video-to-video packs (generation costs credits)
+varg-music-video/      # Scripts: song map, frame-exact rough cut, QA sheet, small export. Skill text maintained in vargHQ/skills
+varg-previz/           # three.js grey-box previz app -> Seedance 2.5 video-to-video packs (generation costs credits).
+                       #   Skill text maintained in vargHQ/skills; SKILL.md here is a pointer stub
                        #   Skills for these four: .claude/skills/<name> -> ../../<name> (SKILL.md in each folder)
 liquid-thorn-logo/     # Any word -> black-metal chrome logo smeared by a WebGL fluid under a cursor. Bun + Chrome + ffmpeg,
                        #   local, no credits. Skill: .claude/skills/liquid-thorn-logo -> ../../liquid-thorn-logo

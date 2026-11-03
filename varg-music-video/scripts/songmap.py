@@ -5,7 +5,8 @@
 
 Beats/downbeats: librosa beat tracking; the bar phase is the one whose beats carry the most onset strength.
 Words: faster-whisper with word timestamps, the lyrics as the initial prompt (optional; skip with no --lyrics/--whisper).
-Sections, drops and fixes are written in by hand afterwards (see references/song-map.md)."""
+Sections, drops and fixes are written in by hand afterwards (see references/anime-case-study.md in the
+varg-music-video skill: https://github.com/vargHQ/skills/tree/main/varg-music-video)."""
 import argparse, json, subprocess, tempfile
 from pathlib import Path
 

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 8,
+  "seed": 42,
+  "brand": "SIGNATURE / MOTION",
+  "demo": true,
+  "template": "prism",
+  "palette": {
+    "background": "#24252B",
+    "foreground": "#F4EEE3",
+    "accent": "#C4AEFE"
+  },
+  "content": {
+    "headline": [
+      "ONE IDEA.",
+      "THREE ANGLES."
+    ],
+    "cards": [
+      "DETAIL",
+      "CONTEXT",
+      "IMPACT"
+    ],
+    "subhead": "Give your work a little more dimension."
+  }
+}

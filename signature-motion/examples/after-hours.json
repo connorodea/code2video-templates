@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 8,
+  "seed": 42,
+  "brand": "SIGNATURE / MOTION",
+  "demo": true,
+  "template": "after-hours",
+  "palette": {
+    "background": "#EF4F29",
+    "foreground": "#FFEAD0",
+    "accent": "#672917"
+  },
+  "content": {
+    "title": [
+      "AFTER",
+      "HOURS"
+    ],
+    "subtitle": "An identity in motion.",
+    "badge": "NIGHT MODE / 01",
+    "cta": "Enter the frame"
+  }
+}

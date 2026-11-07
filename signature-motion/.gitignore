@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+out/
+*.mp4
+*.mp4.manifest.json
+*.png.manifest.json

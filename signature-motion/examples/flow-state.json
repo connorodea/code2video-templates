@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 8,
+  "seed": 42,
+  "brand": "SIGNATURE / MOTION",
+  "demo": true,
+  "template": "flow-state",
+  "palette": {
+    "background": "#F0EEE7",
+    "foreground": "#222C40",
+    "accent": "#6888F9"
+  },
+  "content": {
+    "headline": "From scattered to structured.",
+    "steps": [
+      "Brief",
+      "Research",
+      "Compose",
+      "Render"
+    ],
+    "before_label": "Too many moving parts",
+    "after_label": "One deliberate flow",
+    "subhead": "A place for every task. A purpose for every frame."
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-07",
+  "scope": "Public primary references, separated by inspection method and quality of reach evidence. Creative recipes are original proposals, not production reconstructions.",
+  "causality_note": "Reach does not establish which editing choices caused it or predict performance of adaptations.",
+  "media_policy": "No reference footage or extracted frames are included in this repository.",
+  "references": [
+    {
+      "id": "zach-king-broomstick",
+      "title": "Zach Kings Magic Broomstick",
+      "creator": "Zach King",
+      "published": "2019-12-09",
+      "recipe_id": "impossible-reveal",
+      "primary_urls": [
+        "https://www.tiktok.com/@zachking/video/6768504823336815877",
+        "https://www.guinnessworldrecords.com/world-records/689105-most-viewed-video-on-tiktok",
+        "https://www.vanityfair.com/video/watch/zach-king-prop-tour"
+      ],
+      "reach": {
+        "classification": "historical_verified",
+        "value_approximate": 2200000000,
+        "unit": "views",
+        "measured_at": "2022-03-15",
+        "reported_by": "Guinness, verified by TikTok",
+        "current_count": false
+      },
+      "inspection": {
+        "method": "record entry and creator production explanation",
+        "original_playback_inspected": false,
+        "limitation": "Original TikTok playback unavailable; no observed frame timeline or audio analysis."
+      },
+      "mechanism": "A visible impossibility becomes intelligible after a viewpoint or layer reveal.",
+      "production_dependency": "Staged camera/performer geometry or controlled 3D; arbitrary footage is insufficient."
+    },
+    {
+      "id": "nike-you-cant-stop-us",
+      "title": "You Can’t Stop Us",
+      "creator": "Nike / Wieden+Kennedy",
+      "published": "2020-07",
+      "recipe_id": "matchline",
+      "primary_urls": [
+        "https://www.wk.com/work/nike-you-cant-stop-us/",
+        "https://www.youtube.com/watch?v=GbQomqb28os"
+      ],
+      "asset_url": "https://videos.ctfassets.net/ckso4uqg4vio/6WWahyuXr7L7krvt5dTuDN/347a72d2b1abf5453260e733f8fab33a/FA20_YCSS_ANTHEM_Mp4_1920x1080_90_MAIN_Titled_REV1_NKVR7980H_copy.mp4",
+      "reach": {
+        "classification": "indexed_snapshot_only",
+        "reported_snapshot": 7621523,
+        "unit": "views",
+        "platform_asset": "official NIKE JAPAN upload",
+        "current_count": false,
+        "limitation": "Search-index snapshot; not verified against live platform analytics."
+      },
+      "inspection": {
+        "method": "downloaded agency film and timestamped frame samples",
+        "duration_seconds_approximate": 90.17,
+        "dimensions": [
+          1920,
+          816
+        ],
+        "full_audiovisual_review": false,
+        "limitation": "Sampled states, not every cut boundary or sound cue."
+      },
+      "mechanism": "A persistent split aligns distinct actions by body position, scale, motion phase and editorial meaning.",
+      "production_dependency": "Compatible licensed action clips, focal landmarks and bounded retiming."
+    },
+    {
+      "id": "figma-slides-all-hands",
+      "title": "All Hands on Deck",
+      "creator": "Figma / IVERSON",
+      "published": "2025",
+      "recipe_id": "approval-drama",
+      "primary_urls": [
+        "https://iverson.inc/work/figma",
+        "https://www.youtube.com/watch?v=ZI8KRElcjV4",
+        "https://winners.webbyawards.com/2026/video-film/branded-entertainment/b2b/373669/figma-slides-all-hands-on-deck"
+      ],
+      "asset_url": "https://video.gumlet.io/67aac507feefe705cbe0b2ff/6ab845e03518a22dd8b1f857/download.mp4",
+      "reach": {
+        "classification": "creator_reported",
+        "lower_bound": 2000000,
+        "unit": "organic views across social",
+        "reported_by": "IVERSON",
+        "measured_at": null,
+        "independently_audited": false
+      },
+      "craft_evidence": {
+        "award": "Webby Winner, Video & Film B2B",
+        "year": 2026,
+        "reported_by": "The Webby Awards"
+      },
+      "inspection": {
+        "method": "downloaded studio film and timestamped frame samples",
+        "duration_seconds_approximate": 69.55,
+        "dimensions": [
+          1920,
+          1080
+        ],
+        "full_audiovisual_review": false,
+        "limitation": "Timing belongs to studio-hosted version; other uploads can differ."
+      },
+      "mechanism": "Recognizable work pressure leads to product intervention, a decision hold and a human reaction.",
+      "production_dependency": "Continuity between scenario footage, actual product action and reaction."
+    },
+    {
+      "id": "linear-agent-2026",
+      "title": "Introducing Linear Agent",
+      "creator": "Linear",
+      "published": "2026-03-24",
+      "recipe_id": "obsidian-product-journey",
+      "primary_urls": [
+        "https://linear.app/changelog/2026-03-24-introducing-linear-agent"
+      ],
+      "asset_url": "https://webassets.linear.app/files/ornj730p/production/c8530d6578e71e2e6c1461778f1fe599bb5f0e00.mp4",
+      "reach": {
+        "classification": "not_established",
+        "current_count": null
+      },
+      "inspection": {
+        "method": "downloaded official film and timestamped frame samples",
+        "duration_seconds_approximate": 54.9,
+        "dimensions": [
+          1280,
+          720
+        ],
+        "full_audiovisual_review": false,
+        "limitation": "No production software or causal performance claim established."
+      },
+      "mechanism": "Focus and camera movement guide an action-response-artifact sequence inside a persistent product space.",
+      "production_dependency": "Real product states, focal rectangles, meaningful state transitions and reading holds."
+    },
+    {
+      "id": "nothing-playground-2025",
+      "title": "Nothing, Playground",
+      "creator": "Nothing / BUCK",
+      "published": "2025",
+      "recipe_id": "living-system",
+      "primary_urls": [
+        "https://buck.co/work/nothing-playground",
+        "https://pencilsdown.buck.co/p/the-2025-roundup"
+      ],
+      "asset_reference": {
+        "provider": "Mux",
+        "playback_id": "kPJdmISGk5ZpTrCU02B02WVRdbesK02hBiXo7vT3vKfW6E",
+        "example_frame_url": "https://image.mux.com/kPJdmISGk5ZpTrCU02B02WVRdbesK02hBiXo7vT3vKfW6E/thumbnail.png?time=30&width=480"
+      },
+      "reach": {
+        "classification": "not_established",
+        "current_count": null
+      },
+      "inspection": {
+        "method": "timestamped frames from the actual studio hero asset and creator case study",
+        "duration_seconds_approximate": 62.25,
+        "full_audiovisual_review": false,
+        "limitation": "Release year confirmed; exact original release day and sound timing not verified."
+      },
+      "mechanism": "Repeated masks, grids and contours hold varied imagery together while density and color expand, then simplify.",
+      "production_dependency": "Curated assets, shared motion grammar, focal crops and a planned density progression."
+    },
+    {
+      "id": "figma-config-2026",
+      "title": "A Symbiosis of Code and Design",
+      "creator": "Figma / Oddfellows",
+      "published": "2026",
+      "recipe_id": "material-language",
+      "primary_urls": [
+        "https://oddfellows.tv/work/figma"
+      ],
+      "reach": {
+        "classification": "not_established",
+        "current_count": null
+      },
+      "craft_evidence": {
+        "event": "Config 2026 opening",
+        "reported_by": "Oddfellows"
+      },
+      "inspection": {
+        "method": "creator production breakdown and public stage still",
+        "full_film_inspected": false,
+        "full_audiovisual_review": false,
+        "limitation": "No original-film timeline or sound analysis; no claim about production software."
+      },
+      "mechanism": "Initially distinct visual grammars become a combined system with a legible shared organizing rule.",
+      "production_dependency": "Art-directed correspondences and a truthful conceptual relationship."
+    },
+    {
+      "id": "google-montage-2025",
+      "title": "Google Montage",
+      "creator": "Google / Ordinary Folk",
+      "published": "2025",
+      "recipe_id": "elastic-interface",
+      "primary_urls": [
+        "https://www.ordinaryfolk.co/project/google-montage"
+      ],
+      "asset_url": "https://media.ordinary.co/video/home/google-montage.mp4",
+      "reach": {
+        "classification": "not_established",
+        "current_count": null
+      },
+      "inspection": {
+        "method": "downloaded silent square portfolio excerpt and timestamped frame samples",
+        "inspected_duration_seconds": 15.5,
+        "full_film_duration_seconds": 72,
+        "dimensions": [
+          1080,
+          1080
+        ],
+        "average_frame_rate": "24",
+        "audio_streams": 0,
+        "sha256": "587c18f6f9e49e87df09947112596f3742629edb6754d6233de80e3f6e4d44f1",
+        "full_film_inspected": false,
+        "full_audiovisual_review": false,
+        "limitation": "Excerpt offset inside the montage is unknown. The montage combines several projects."
+      },
+      "mechanism": "A stable focal anchor and recognizable outline connect multiple interface forms and actions.",
+      "production_dependency": "Compatible vector topology, separate readable text, semantic anchors and real interface states."
+    }
+  ]
+}

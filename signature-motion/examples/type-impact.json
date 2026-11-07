@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 8,
+  "seed": 42,
+  "brand": "SIGNATURE / MOTION",
+  "demo": true,
+  "template": "type-impact",
+  "palette": {
+    "background": "#CCFF2D",
+    "foreground": "#151611",
+    "accent": "#414B29"
+  },
+  "content": {
+    "headline": [
+      "MAKE",
+      "THEM",
+      "LOOK."
+    ],
+    "subhead": "A bold first frame. A clear idea. A reason to stay.",
+    "cta": "Build the next frame"
+  }
+}

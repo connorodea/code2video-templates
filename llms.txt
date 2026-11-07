@@ -30,3 +30,9 @@ Read a template's SKILL.md before using it. AGENTS.md has the index and the rule
 - [AGENTS.md](https://raw.githubusercontent.com/vargHQ/code2video-templates/master/AGENTS.md): index and rules for agents
 - [varg model specs](https://varg.ai/models/llms.txt): current model ids, inputs and limits
 - [vargHQ/sdk](https://github.com/vargHQ/sdk): the TypeScript SDK and CLI
+
+## Signature Motion
+
+- [signature-motion](signature-motion/SKILL.md): Six JSON-driven local templates: Type Impact, Redline, Signal, Flow State, Prism, After Hours. Python + Pillow + ffmpeg. No API credits. Strict input schema, still previews and MP4 rendering.
+- [signature-motion catalog](signature-motion/templates.json): Machine-readable template discovery.
+- [signature-motion integration](signature-motion/INTEGRATION.md): Agent contract and editor integration boundaries.

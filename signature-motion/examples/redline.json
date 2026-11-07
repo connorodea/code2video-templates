@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 8,
+  "seed": 42,
+  "brand": "SIGNATURE / MOTION",
+  "demo": true,
+  "template": "redline",
+  "palette": {
+    "background": "#F2EBDD",
+    "foreground": "#211D19",
+    "accent": "#DB422E"
+  },
+  "content": {
+    "headline": "Put the proof in frame.",
+    "quote": "Great stories give every scene a job.",
+    "source": "Demonstration text / not a published quotation",
+    "verdict": "Make the point. Show the source."
+  }
+}

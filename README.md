@@ -41,6 +41,7 @@ My request: <what you want to see>
 
 | Template | Makes | Runs | Cost |
 |----------|-------|------|------|
+| [`signature-motion/`](signature-motion/) | Six reusable motion templates: Type Impact, Redline, Signal, Flow State, Prism, After Hours; validated JSON plus preview and MP4 output | Python + Pillow + ffmpeg | local, no API credits |
 | [`imessage-video/`](imessage-video/) | A JSON chat as an iPhone iMessage screen recording: typing, tapbacks, receipts, photos, videos, link cards, group chats, light or dark, message sounds | Bun + Chrome + ffmpeg | free, local |
 | [`agent-video-style-kit/`](agent-video-style-kit/) | Your title and caption style as a file the agent applies: [Cut30's Agent Video Style Kit](https://cut30.co/guides/agent-video-style-kit) for 9:16 and 16:9, burned onto your footage from a transcript or SRT | Bun + Chrome + ffmpeg | free, local |
 | [`apple-notes-video/`](apple-notes-video/) | Any text typed live in an iPhone Apple Notes screen, 9:16 | Bun + Chrome + ffmpeg | free, local |

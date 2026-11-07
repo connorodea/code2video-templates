@@ -1,0 +1,789 @@
+{
+  "catalog_version": 1,
+  "catalog_type": "advanced_motion_designs",
+  "status": "design",
+  "runtime_supported": false,
+  "description": "Seven proposed motion and editing recipes derived from named reference works. These are planning records, not executable templates or render.py options. The implemented registry remains templates.json.",
+  "timing_note": "Every example beat below is a proposed adaptation. These times are not timecodes, measured cut boundaries, or transcripts from the reference films. These machine-readable example variants may differ from the alternate storyboards in REVERSE-ENGINEERING.md.",
+  "priority_note": "Lower numbers mean earlier suggested implementation, based on usefulness to an agentic editor and asset/engineering requirements. Priority is not a prediction of audience reach.",
+  "recipes": [
+    {
+      "id": "matchline",
+      "name": "Matchline",
+      "status": "design",
+      "runtime_supported": false,
+      "description": "Join two different clips across a stable seam so bodies, objects, or trajectories appear to complete the same action. Each new pair carries the argument forward through a visual correspondence.",
+      "reference_urls": [
+        "https://www.wk.com/work/nike-you-cant-stop-us/",
+        "https://www.youtube.com/watch?v=GbQomqb28os",
+        "https://videos.ctfassets.net/ckso4uqg4vio/6WWahyuXr7L7krvt5dTuDN/347a72d2b1abf5453260e733f8fab33a/FA20_YCSS_ANTHEM_Mp4_1920x1080_90_MAIN_Titled_REV1_NKVR7980H_copy.mp4"
+      ],
+      "evidence_method": "downloaded agency film and timestamped frame samples. Sampled states, not every cut boundary or sound cue.",
+      "reach_evidence": "A roughly 7.6 million-view indexed snapshot was found during reference research. It is not a live verified count or evidence that the editing technique alone caused reach.",
+      "required_assets": [
+        "At least two candidate pairs of owned or licensed clips with compatible poses, horizons, object shapes, or action trajectories.",
+        "Source in/out points and enough surrounding frames to adjust the synchronization.",
+        "A short message and the intended meaning of each pair."
+      ],
+      "inputs": [
+        {
+          "name": "clip_pairs",
+          "type": "array",
+          "description": "Left/right asset IDs, in/out points, correspondence landmarks, and the narrative relationship."
+        },
+        {
+          "name": "seam",
+          "type": "object",
+          "description": "Position, orientation, crop bounds, and the anchor that must remain continuous."
+        },
+        {
+          "name": "sync_events",
+          "type": "array",
+          "description": "Contact, landing, gesture, or direction-change times to align."
+        },
+        {
+          "name": "retime_limits",
+          "type": "object",
+          "description": "Explicitly permitted source-speed adjustments; dialogue remains at natural speed."
+        },
+        {
+          "name": "closing_copy",
+          "type": "string",
+          "description": "The idea that the paired actions should make clear."
+        }
+      ],
+      "example_duration_seconds": 18,
+      "example_beats": [
+        {
+          "role": "hook",
+          "start_s": 0,
+          "end_s": 2,
+          "action": "Introduce one clearly readable action and the central seam."
+        },
+        {
+          "role": "join",
+          "start_s": 2,
+          "end_s": 7,
+          "action": "Reveal the second clip as the first action crosses the seam."
+        },
+        {
+          "role": "variation",
+          "start_s": 7,
+          "end_s": 12,
+          "action": "Replace the pair while preserving a pose, trajectory, or graphic anchor."
+        },
+        {
+          "role": "meaning",
+          "start_s": 12,
+          "end_s": 16,
+          "action": "Use the strongest pair to resolve the stated relationship."
+        },
+        {
+          "role": "close",
+          "start_s": 16,
+          "end_s": 18,
+          "action": "Hold a concise conclusion or brand mark."
+        }
+      ],
+      "prerequisites": [
+        "Future implementation needs shot analysis, landmark tracking, crop planning, and frame-accurate media composition.",
+        "Confirm usable clip pairs before designing the final timing."
+      ],
+      "fallback": "When the split cannot remain convincing, use a sequential match cut between the best aligned poses. Preserve the relationship without forcing a broken seam.",
+      "limitations": [
+        "Success depends heavily on source selection and compatible camera geometry.",
+        "A shared silhouette is insufficient when actions or meanings contradict each other.",
+        "The current Pillow templates do not track subjects, retime footage, or construct these composites."
+      ],
+      "evaluation_checks": [
+        "Measure landmark error and direction continuity around the seam at each join.",
+        "Check that crop changes do not remove the subject or hide the action being compared.",
+        "Review synchronization at normal speed and frame by frame around the contact event.",
+        "Confirm that each pair communicates the intended relationship without explanatory overload."
+      ],
+      "priority": 3,
+      "reference_id": "nike-you-cant-stop-us",
+      "sound_direction": {
+        "status": "proposed_original_direction",
+        "reference_audio_reconstructed": false,
+        "direction": "Place an approved transient at the shared action contact; crossfade surrounding ambience. Preserve natural dialogue speed.",
+        "future_cue_fields": [
+          "role",
+          "target_frame",
+          "source_asset",
+          "gain",
+          "timing_tolerance_frames"
+        ],
+        "implemented_starter_support": "One supplied audio track; no generated cue mix or animation-to-audio alignment."
+      }
+    },
+    {
+      "id": "obsidian-product-journey",
+      "name": "Obsidian Product Journey",
+      "status": "design",
+      "runtime_supported": false,
+      "description": "Follow one real product task through intention, interaction, result, and an artifact. Perspective, focus, and restrained camera movement preserve the same spatial context across the journey.",
+      "reference_urls": [
+        "https://linear.app/changelog/2026-03-24-introducing-linear-agent",
+        "https://webassets.linear.app/files/ornj730p/production/c8530d6578e71e2e6c1461778f1fe599bb5f0e00.mp4"
+      ],
+      "evidence_method": "downloaded official film and timestamped frame samples. No production software or causal performance claim established.",
+      "reach_evidence": "High-craft reference; no verified public audience metric was established.",
+      "required_assets": [
+        "Approved screen captures, recordings, or reproducible UI states from one working product flow.",
+        "Actual output artifact and a view that shows where it belongs in the product.",
+        "Brand typography, palette, and closing mark."
+      ],
+      "inputs": [
+        {
+          "name": "ui_states",
+          "type": "array",
+          "description": "Ordered asset IDs, state names, focal rectangles, and the action responsible for each state change."
+        },
+        {
+          "name": "interaction_events",
+          "type": "array",
+          "description": "Cursor destinations, selections, typing events, and their resulting UI changes."
+        },
+        {
+          "name": "camera_poses",
+          "type": "array",
+          "description": "Bounded position, perspective, scale, and focus values for each beat."
+        },
+        {
+          "name": "reading_holds",
+          "type": "array",
+          "description": "Frames reserved for understanding the important text or result after motion settles."
+        },
+        {
+          "name": "brand",
+          "type": "object",
+          "description": "Product name, palette, font assets, and closing mark."
+        }
+      ],
+      "example_duration_seconds": 24,
+      "example_beats": [
+        {
+          "role": "orientation",
+          "start_s": 0,
+          "end_s": 3,
+          "action": "Establish the product canvas and the task's starting state."
+        },
+        {
+          "role": "intention",
+          "start_s": 3,
+          "end_s": 7,
+          "action": "Frame one input or decision and show the corresponding interaction."
+        },
+        {
+          "role": "proof",
+          "start_s": 7,
+          "end_s": 12,
+          "action": "Reveal the actual result in the same spatial context."
+        },
+        {
+          "role": "artifact",
+          "start_s": 12,
+          "end_s": 18,
+          "action": "Show the document, edit, report, or other useful output in readable detail."
+        },
+        {
+          "role": "overview",
+          "start_s": 18,
+          "end_s": 21,
+          "action": "Pull back to explain where the result fits in the workflow."
+        },
+        {
+          "role": "close",
+          "start_s": 21,
+          "end_s": 24,
+          "action": "Clear the interface and hold the product identity."
+        }
+      ],
+      "prerequisites": [
+        "Future implementation needs deterministic media/state playback and coordinated perspective, cursor, and focus animation.",
+        "Approve the source product flow and text before designing its camera choreography."
+      ],
+      "fallback": "Use straight-on crops of the same approved UI states, with short movements between focal rectangles and generous reading holds.",
+      "limitations": [
+        "It cannot demonstrate an absent product capability; every meaningful state must come from a supplied or approved source.",
+        "Blur and perspective must not conceal the feature being explained.",
+        "Prism's current image panels are not an implementation of this interactive product journey."
+      ],
+      "evaluation_checks": [
+        "Verify that every interaction precedes and corresponds to its displayed result.",
+        "Compare each displayed state and artifact with its approved source.",
+        "Inspect focal text at the delivery size during the settled reading hold.",
+        "Check that the viewer can follow one task from input to useful output."
+      ],
+      "priority": 1,
+      "reference_id": "linear-agent-2026",
+      "sound_direction": {
+        "status": "proposed_original_direction",
+        "reference_audio_reconstructed": false,
+        "direction": "Use a restrained bed, quiet interface event cues and a distinct arrival for the useful artifact. Duck under narration.",
+        "future_cue_fields": [
+          "role",
+          "target_frame",
+          "source_asset",
+          "gain",
+          "timing_tolerance_frames"
+        ],
+        "implemented_starter_support": "One supplied audio track; no generated cue mix or animation-to-audio alignment."
+      }
+    },
+    {
+      "id": "living-system",
+      "name": "Living System",
+      "status": "design",
+      "runtime_supported": false,
+      "description": "Grow a small set of brand primitives into an expressive system. Grids, dots, type, processed footage, and tactile textures change together while retaining a recognizable visual identity.",
+      "reference_urls": [
+        "https://buck.co/work/nothing-playground",
+        "https://pencilsdown.buck.co/p/the-2025-roundup"
+      ],
+      "evidence_method": "timestamped frames from the actual studio hero asset and creator case study. Release year confirmed; exact original release day and sound timing not verified.",
+      "reach_evidence": "High-craft reference; no verified public audience metric was established.",
+      "required_assets": [
+        "A supplied brand mark, typeface, and a deliberately limited set of geometric primitives.",
+        "Owned or licensed photographs or clips chosen to supply the human or tactile material.",
+        "A brief defining the single idea that the evolving system should communicate."
+      ],
+      "inputs": [
+        {
+          "name": "primitive_system",
+          "type": "object",
+          "description": "Grid, dots, type, spacing, stroke, transparency, and palette rules."
+        },
+        {
+          "name": "source_media",
+          "type": "array",
+          "description": "Media assets and the regions that may be transformed through masks, sampling, or halftones."
+        },
+        {
+          "name": "transformations",
+          "type": "array",
+          "description": "Meaningful transitions between sparse, dense, tactile, and resolved states."
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "description": "Stable seed for procedural variation that must remain reproducible."
+        },
+        {
+          "name": "closing_message",
+          "type": "string",
+          "description": "The idea or brand identity that the system resolves into."
+        }
+      ],
+      "example_duration_seconds": 18,
+      "example_beats": [
+        {
+          "role": "seed",
+          "start_s": 0,
+          "end_s": 3,
+          "action": "Establish one primitive and the motion rule that defines the system."
+        },
+        {
+          "role": "growth",
+          "start_s": 3,
+          "end_s": 7,
+          "action": "Let that rule form a larger grid or field without changing its identity."
+        },
+        {
+          "role": "material",
+          "start_s": 7,
+          "end_s": 12,
+          "action": "Bring human or tactile source media through the established graphic language."
+        },
+        {
+          "role": "expression",
+          "start_s": 12,
+          "end_s": 16,
+          "action": "Use the same rules to reveal a new expressive configuration."
+        },
+        {
+          "role": "resolution",
+          "start_s": 16,
+          "end_s": 18,
+          "action": "Resolve the field into a clear message or brand shape."
+        }
+      ],
+      "prerequisites": [
+        "Future implementation needs procedural drawing, repeatable media masks, and shared style tokens across scenes.",
+        "Approve a representative sparse state, dense state, and media treatment before rendering the whole sequence."
+      ],
+      "fallback": "Use flat SVG or Canvas primitives and preprocessed source images with controlled masks. Preserve the visual grammar without requiring a 3D or fluid simulation.",
+      "limitations": [
+        "A changing particle background alone does not explain an idea or constitute this recipe.",
+        "Source-media processing must preserve the subject needed to understand the message.",
+        "The current runtime does not provide this multi-scene procedural system."
+      ],
+      "evaluation_checks": [
+        "Confirm the same primitive rules remain recognizable in every scene.",
+        "Render the same frame out of order and compare it for deterministic output.",
+        "Check dense states for flicker, aliasing, and illegible small type at the delivery size.",
+        "Verify that each transformation has a communication purpose beyond decoration."
+      ],
+      "priority": 4,
+      "reference_id": "nothing-playground-2025",
+      "sound_direction": {
+        "status": "proposed_original_direction",
+        "reference_audio_reconstructed": false,
+        "direction": "Let texture density follow the visual density curve; clear space for the final readable message.",
+        "future_cue_fields": [
+          "role",
+          "target_frame",
+          "source_asset",
+          "gain",
+          "timing_tolerance_frames"
+        ],
+        "implemented_starter_support": "One supplied audio track; no generated cue mix or animation-to-audio alignment."
+      }
+    },
+    {
+      "id": "impossible-reveal",
+      "name": "Impossible Reveal",
+      "status": "design",
+      "runtime_supported": false,
+      "description": "Present one apparently impossible action, hold its visual premise long enough to be understood, then reveal a practical or editorial explanation that reinterprets what the viewer just saw.",
+      "reference_urls": [
+        "https://www.tiktok.com/@zachking/video/6768504823336815877",
+        "https://www.guinnessworldrecords.com/world-records/689105-most-viewed-video-on-tiktok",
+        "https://www.vanityfair.com/video/watch/zach-king-prop-tour"
+      ],
+      "evidence_method": "record entry and creator production explanation. Original TikTok playback unavailable; no observed frame timeline or audio analysis.",
+      "reach_evidence": "Guinness reports approximately 2.2 billion TikTok views verified on March 15, 2022 for the video posted December 9, 2019. This is historical evidence, not a current counter or a promise of repeatable virality.",
+      "required_assets": [
+        "A storyboard specifying both the apparent action and the honest reveal mechanism.",
+        "Planned source shots with compatible camera, lighting, movement, and occlusion; clean plates if the planned effect requires them.",
+        "The actual reveal shot or supplied elements needed to demonstrate the explanation."
+      ],
+      "inputs": [
+        {
+          "name": "premise",
+          "type": "string",
+          "description": "The single impossible action the viewer should perceive."
+        },
+        {
+          "name": "shot_plan",
+          "type": "array",
+          "description": "Capture requirements, actor/object marks, camera poses, and continuity anchors."
+        },
+        {
+          "name": "composite_plan",
+          "type": "object",
+          "description": "Explicit masks, occlusion windows, clean plates, or matched cuts needed by the chosen effect."
+        },
+        {
+          "name": "reveal",
+          "type": "object",
+          "description": "The shot or transformation that exposes the practical explanation."
+        },
+        {
+          "name": "payoff",
+          "type": "string",
+          "description": "The closing reaction or callback that rewards the reveal."
+        }
+      ],
+      "example_duration_seconds": 12,
+      "example_beats": [
+        {
+          "role": "premise",
+          "start_s": 0,
+          "end_s": 2,
+          "action": "Establish the ordinary environment and the action's continuity anchors."
+        },
+        {
+          "role": "impossibility",
+          "start_s": 2,
+          "end_s": 6,
+          "action": "Show the impossible action clearly without explaining it yet."
+        },
+        {
+          "role": "reveal",
+          "start_s": 6,
+          "end_s": 9,
+          "action": "Expose the practical explanation through a motivated view or action."
+        },
+        {
+          "role": "payoff",
+          "start_s": 9,
+          "end_s": 12,
+          "action": "Hold the resolved view and a short reaction or callback."
+        }
+      ],
+      "prerequisites": [
+        "Future implementation needs a shot-planning step and an effect-specific compositing workflow.",
+        "Validate the intended illusion in a short test before completing production."
+      ],
+      "fallback": "Use a deliberate occlusion or a clearly staged before/reveal cut. If the supplied material cannot support a convincing illusion, retain the reveal story and omit the seamless-effect claim.",
+      "limitations": [
+        "This cannot be reliably applied as a filter to arbitrary footage.",
+        "Generated or mismatched source shots may break geometry, shadows, object identity, and camera continuity.",
+        "The current runtime has no tracking, rotoscoping, clean-plate, or live-action VFX implementation."
+      ],
+      "evaluation_checks": [
+        "Check the action and explanation are understandable without a verbal tutorial.",
+        "Inspect mask edges, contact shadows, geometry, and object continuity around the reveal.",
+        "Confirm the reveal answers the visual question created by the opening.",
+        "Review the effect at normal speed before inspecting individual frames."
+      ],
+      "priority": 7,
+      "reference_id": "zach-king-broomstick",
+      "sound_direction": {
+        "status": "proposed_original_direction",
+        "reference_audio_reconstructed": false,
+        "direction": "Preserve believable scene ambience, then give the reveal a deliberate accent or pause.",
+        "future_cue_fields": [
+          "role",
+          "target_frame",
+          "source_asset",
+          "gain",
+          "timing_tolerance_frames"
+        ],
+        "implemented_starter_support": "One supplied audio track; no generated cue mix or animation-to-audio alignment."
+      }
+    },
+    {
+      "id": "approval-drama",
+      "name": "Approval Drama",
+      "status": "design",
+      "runtime_supported": false,
+      "description": "Build a short workplace story around a recognizable problem, rising pressure, a concrete product intervention, a decision hold, and a visible payoff. Product footage earns its place by resolving the story.",
+      "reference_urls": [
+        "https://iverson.inc/work/figma",
+        "https://www.youtube.com/watch?v=ZI8KRElcjV4",
+        "https://winners.webbyawards.com/2026/video-film/branded-entertainment/b2b/373669/figma-slides-all-hands-on-deck",
+        "https://video.gumlet.io/67aac507feefe705cbe0b2ff/6ab845e03518a22dd8b1f857/download.mp4"
+      ],
+      "evidence_method": "downloaded studio film and timestamped frame samples. Timing belongs to studio-hosted version; other uploads can differ.",
+      "reach_evidence": "IVERSON reports more than two million organic social views. This is a creator-reported campaign metric, not independently audited platform analytics. The award does not establish the cause of audience growth or company revenue.",
+      "required_assets": [
+        "Supplied or licensed character footage with usable reactions and continuity.",
+        "Approved product captures that visibly solve the story's stated problem.",
+        "A script identifying the decision, its outcome, and a concise brand close."
+      ],
+      "inputs": [
+        {
+          "name": "story_problem",
+          "type": "string",
+          "description": "One familiar work problem the viewer can recognize immediately."
+        },
+        {
+          "name": "pressure_beats",
+          "type": "array",
+          "description": "Escalations that make the same problem more urgent without opening a second plot."
+        },
+        {
+          "name": "product_intervention",
+          "type": "object",
+          "description": "The real UI actions and resulting artifact that resolve the problem."
+        },
+        {
+          "name": "decision_and_reaction",
+          "type": "object",
+          "description": "The pending decision, suspense cue, actual answer in the story, and matching reaction clip."
+        },
+        {
+          "name": "brand_close",
+          "type": "object",
+          "description": "Final message, mark, and optional call to action."
+        }
+      ],
+      "example_duration_seconds": 30,
+      "example_beats": [
+        {
+          "role": "problem",
+          "start_s": 0,
+          "end_s": 4,
+          "action": "Establish the work problem and the person who needs it solved."
+        },
+        {
+          "role": "pressure",
+          "start_s": 4,
+          "end_s": 9,
+          "action": "Escalate the same problem through one or two readable reactions."
+        },
+        {
+          "role": "intervention",
+          "start_s": 9,
+          "end_s": 17,
+          "action": "Demonstrate the product making a useful change and show its output."
+        },
+        {
+          "role": "decision",
+          "start_s": 17,
+          "end_s": 22,
+          "action": "Hold for the consequential answer using a quiet visual cue."
+        },
+        {
+          "role": "payoff",
+          "start_s": 22,
+          "end_s": 27,
+          "action": "Show the answer and the matching human response."
+        },
+        {
+          "role": "close",
+          "start_s": 27,
+          "end_s": 30,
+          "action": "Let the brand inherit the resolution with a brief closing card."
+        }
+      ],
+      "prerequisites": [
+        "Future implementation needs a narrative planner, shot-role metadata, dialogue/cut timing, and reaction matching.",
+        "Resolve the story and available footage before selecting motion treatments."
+      ],
+      "fallback": "Tell the same problem/intervention/decision/payoff sequence with approved narration, product footage, and an explicitly fictional message graphic when compatible character footage is unavailable.",
+      "limitations": [
+        "It is a story and editing structure, not a transition preset.",
+        "A staged message or reaction must not be presented as a real customer testimonial or measured result.",
+        "The current runtime does not assemble dialogue-driven live-action stories."
+      ],
+      "evaluation_checks": [
+        "Verify that the opening problem, product action, and final answer refer to the same task.",
+        "Check that each reaction matches the answer and preserves character continuity.",
+        "Keep the decision hold readable without making it an arbitrary pause.",
+        "Confirm that the useful product output is visible before the brand close."
+      ],
+      "priority": 5,
+      "reference_id": "figma-slides-all-hands",
+      "sound_direction": {
+        "status": "proposed_original_direction",
+        "reference_audio_reconstructed": false,
+        "direction": "Prioritize dialogue, reduce the music during the decision hold, and leave room for the human reaction.",
+        "future_cue_fields": [
+          "role",
+          "target_frame",
+          "source_asset",
+          "gain",
+          "timing_tolerance_frames"
+        ],
+        "implemented_starter_support": "One supplied audio track; no generated cue mix or animation-to-audio alignment."
+      }
+    },
+    {
+      "id": "material-language",
+      "name": "Material Language",
+      "status": "design",
+      "runtime_supported": false,
+      "description": "Introduce two distinct visual grammars, discover a shared behavior, and transform them into one creative world. Persistent correspondences give the sequence a narrative instead of a sequence of unrelated effects.",
+      "reference_urls": [
+        "https://oddfellows.tv/work/figma"
+      ],
+      "evidence_method": "creator production breakdown and public stage still. No original-film timeline or sound analysis; no claim about production software.",
+      "reach_evidence": "High-craft reference with a confirmed Config 2026 presentation context; no verified audience metric was established.",
+      "required_assets": [
+        "Two deliberately distinct sets of supplied shapes, typography, textures, or imagery.",
+        "Designed intermediate states that explain how elements correspond across the two grammars.",
+        "A final composition expressing the combined idea."
+      ],
+      "inputs": [
+        {
+          "name": "grammar_a",
+          "type": "object",
+          "description": "Initial rules for shape, material, color, motion, and density."
+        },
+        {
+          "name": "grammar_b",
+          "type": "object",
+          "description": "A contrasting but compatible second set of rules."
+        },
+        {
+          "name": "correspondences",
+          "type": "array",
+          "description": "Specific element-to-element or behavior-to-behavior relationships that justify each transformation."
+        },
+        {
+          "name": "shared_behavior",
+          "type": "string",
+          "description": "The motion or relationship through which the two systems discover a common language."
+        },
+        {
+          "name": "resolved_world",
+          "type": "object",
+          "description": "The final integrated composition and the idea it should communicate."
+        }
+      ],
+      "example_duration_seconds": 24,
+      "example_beats": [
+        {
+          "role": "contrast",
+          "start_s": 0,
+          "end_s": 4,
+          "action": "Introduce the two grammars as distinct, readable systems."
+        },
+        {
+          "role": "connection",
+          "start_s": 4,
+          "end_s": 8,
+          "action": "Find one shared behavior or shape correspondence."
+        },
+        {
+          "role": "transformation",
+          "start_s": 8,
+          "end_s": 14,
+          "action": "Let an identifiable element carry that relationship through a material change."
+        },
+        {
+          "role": "expansion",
+          "start_s": 14,
+          "end_s": 20,
+          "action": "Show the range of ideas made possible by the combined language."
+        },
+        {
+          "role": "resolution",
+          "start_s": 20,
+          "end_s": 24,
+          "action": "Settle into a coherent final world and a concise closing identity."
+        }
+      ],
+      "prerequisites": [
+        "Future implementation needs art-directed state design, correspondence-aware transforms, and consistent style constraints across scenes.",
+        "Review the intermediate states before committing to simulation or complex 3D work."
+      ],
+      "fallback": "Limit both grammars to a few 2D primitives and use designed masks, shape interpolation, and match cuts while preserving the conceptual relationship.",
+      "limitations": [
+        "This needs more art direction than a generic template with replaceable text fields.",
+        "Unrelated generated clips with matching colors do not preserve a visual grammar.",
+        "The current runtime does not implement material simulation or correspondence-aware multi-scene transformation."
+      ],
+      "evaluation_checks": [
+        "Identify the carried element or behavior at every transformation boundary.",
+        "Check that each grammar remains recognizable before the combined state appears.",
+        "Verify that the final world visibly explains the relationship introduced at the start.",
+        "Review transitions at normal speed for continuity and settled moments for comprehension."
+      ],
+      "priority": 6,
+      "reference_id": "figma-config-2026",
+      "sound_direction": {
+        "status": "proposed_original_direction",
+        "reference_audio_reconstructed": false,
+        "direction": "Assign distinct textures to the initial systems, then combine their motifs when the systems cooperate.",
+        "future_cue_fields": [
+          "role",
+          "target_frame",
+          "source_asset",
+          "gain",
+          "timing_tolerance_frames"
+        ],
+        "implemented_starter_support": "One supplied audio track; no generated cue mix or animation-to-audio alignment."
+      }
+    },
+    {
+      "id": "elastic-interface",
+      "name": "Elastic Interface",
+      "status": "design",
+      "runtime_supported": false,
+      "description": "Carry one recognizable outline or focal anchor through search, voice, photo, and video states. The interface changes its job while maintaining shape, location, and a readable rhythm.",
+      "reference_urls": [
+        "https://www.ordinaryfolk.co/project/google-montage",
+        "https://media.ordinary.co/video/home/google-montage.mp4"
+      ],
+      "evidence_method": "downloaded silent square portfolio excerpt and timestamped frame samples. Excerpt offset inside the montage is unknown. The montage combines several projects.",
+      "reach_evidence": "High-craft reference; no verified audience metric was established.",
+      "required_assets": [
+        "Approved visual states for two to four interface modes, including their meaningful content.",
+        "Vector outlines or masks with explicit correspondences between consecutive states.",
+        "A consistent palette, typography system, and focal anchor."
+      ],
+      "inputs": [
+        {
+          "name": "mode_states",
+          "type": "array",
+          "description": "Mode role, source asset, content, focal rectangle, and required reading hold."
+        },
+        {
+          "name": "anchor",
+          "type": "object",
+          "description": "The semantic shape or point that remains recognizable across transformations."
+        },
+        {
+          "name": "shape_pairs",
+          "type": "array",
+          "description": "Compatible vector paths or masks for each approved state transition."
+        },
+        {
+          "name": "interaction_cues",
+          "type": "array",
+          "description": "Typing, recording, selection, or playback events that justify each state change."
+        },
+        {
+          "name": "transition_budget",
+          "type": "object",
+          "description": "Separate entrance, settled hold, and exit durations; preserve time to understand each mode."
+        }
+      ],
+      "example_duration_seconds": 24,
+      "example_beats": [
+        {
+          "role": "anchor",
+          "start_s": 0,
+          "end_s": 3,
+          "action": "Establish the outline and its first clear function."
+        },
+        {
+          "role": "search",
+          "start_s": 3,
+          "end_s": 7,
+          "action": "Perform a search interaction and hold its useful state."
+        },
+        {
+          "role": "voice",
+          "start_s": 7,
+          "end_s": 11,
+          "action": "Transform the same anchor into a voice interaction, then settle."
+        },
+        {
+          "role": "photo",
+          "start_s": 11,
+          "end_s": 15,
+          "action": "Use a meaningful shape correspondence to introduce the image state."
+        },
+        {
+          "role": "video",
+          "start_s": 15,
+          "end_s": 20,
+          "action": "Expand the anchor into playback or another approved moving-media state."
+        },
+        {
+          "role": "resolve",
+          "start_s": 20,
+          "end_s": 24,
+          "action": "Resolve the modes into a single clear product or brand composition."
+        }
+      ],
+      "prerequisites": [
+        "Future implementation needs deterministic interface state playback, vector/mask transforms, and semantic anchor tracking.",
+        "Check path compatibility and content legibility before selecting a morph instead of a cut."
+      ],
+      "fallback": "Use a match cut or a simple motivated mask between approved states when a morph would distort the interface. Retain the same anchor and reading holds.",
+      "limitations": [
+        "Matching colors or rounded rectangles alone does not establish semantic continuity.",
+        "The preview excerpt does not provide evidence for the full film's soundtrack or complete structure.",
+        "The current runtime does not implement arbitrary SVG morphing or multi-mode UI playback."
+      ],
+      "evaluation_checks": [
+        "Confirm that the same anchor remains identifiable before, during, and after each state change.",
+        "Verify that an interaction cue explains every change of interface mode.",
+        "Inspect each settled state for readable content at the intended output size.",
+        "Check intermediate geometry for self-intersections, text distortion, and unintended scale jumps."
+      ],
+      "priority": 2,
+      "reference_id": "google-montage-2025",
+      "sound_direction": {
+        "status": "proposed_original_direction",
+        "reference_audio_reconstructed": false,
+        "direction": "Support continuous shape movement with a restrained settling cue; leave reading holds acoustically calm.",
+        "future_cue_fields": [
+          "role",
+          "target_frame",
+          "source_asset",
+          "gain",
+          "timing_tolerance_frames"
+        ],
+        "implemented_starter_support": "One supplied audio track; no generated cue mix or animation-to-audio alignment."
+      }
+    }
+  ]
+}

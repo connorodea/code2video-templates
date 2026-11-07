@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "renderer": "render.py",
+  "config_schema": "schema.json",
+  "output": {
+    "format": "mp4",
+    "codec": "h264",
+    "alpha": false,
+    "audio": "optional supplied local track"
+  },
+  "limits": {
+    "aspects": [
+      "9:16",
+      "16:9",
+      "1:1"
+    ],
+    "minimum_short_edge": 144,
+    "maximum_long_edge": 1920,
+    "maximum_square_edge": 1080,
+    "fps": [
+      24,
+      25,
+      30,
+      60
+    ],
+    "duration_seconds": [
+      6,
+      30
+    ]
+  },
+  "templates": [
+    {
+      "id": "type-impact",
+      "title": "Type Impact",
+      "description": "Editorial words rise through masks and resolve into a statement.",
+      "status": "implemented",
+      "story_roles": [
+        "hook",
+        "positioning",
+        "call-to-action"
+      ],
+      "example": "examples/type-impact.json",
+      "required_assets": [],
+      "optional_assets": [],
+      "production_source_required": false
+    },
+    {
+      "id": "redline",
+      "title": "Redline",
+      "description": "A source excerpt receives a moving highlight and an explicit conclusion.",
+      "status": "implemented",
+      "story_roles": [
+        "evidence",
+        "quotation",
+        "explanation"
+      ],
+      "example": "examples/redline.json",
+      "required_assets": [],
+      "optional_assets": [],
+      "production_source_required": true
+    },
+    {
+      "id": "signal",
+      "title": "Signal",
+      "description": "A proportional line chart draws through supplied observations.",
+      "status": "implemented",
+      "story_roles": [
+        "data",
+        "trend",
+        "evidence"
+      ],
+      "example": "examples/signal.json",
+      "required_assets": [],
+      "optional_assets": [],
+      "production_source_required": true
+    },
+    {
+      "id": "flow-state",
+      "title": "Flow State",
+      "description": "Scattered task strips align into a readable ordered process.",
+      "status": "implemented",
+      "story_roles": [
+        "workflow",
+        "transformation",
+        "explanation"
+      ],
+      "example": "examples/flow-state.json",
+      "required_assets": [],
+      "optional_assets": [],
+      "production_source_required": false
+    },
+    {
+      "id": "prism",
+      "title": "Prism",
+      "description": "Three dimensional panels compose supplied images or typographic specimens.",
+      "status": "implemented",
+      "story_roles": [
+        "showcase",
+        "portfolio",
+        "product"
+      ],
+      "example": "examples/prism.json",
+      "required_assets": [],
+      "optional_assets": [
+        "three local PNG/JPEG/WebP images"
+      ],
+      "production_source_required": false
+    },
+    {
+      "id": "after-hours",
+      "title": "After Hours",
+      "description": "An animated geometric iris frames oversized title typography.",
+      "status": "implemented",
+      "story_roles": [
+        "opener",
+        "identity",
+        "interlude"
+      ],
+      "example": "examples/after-hours.json",
+      "required_assets": [],
+      "optional_assets": [],
+      "production_source_required": false
+    }
+  ]
+}

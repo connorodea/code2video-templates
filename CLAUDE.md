@@ -10,6 +10,8 @@ Main templates live at the root, one folder per template named after it. Each fo
 the video, a `README.md` and a `SKILL.md` for agents (read it before using the template). New templates go here.
 
 ```
+gta-production-pilot/  # JSON scene spec -> synthetic GTA channel pilot, timed captions, local audio, ProRes layers + Resolve XML.
+                       #   Python + Pillow + NumPy + FFmpeg + Flite; local, no credits. Skill: .claude/skills/gta-production-pilot
 imessage-video/        # JSON chat -> iPhone iMessage screen recording (typing, tapbacks, group, dark, sounds). Bun + Chrome +
                        #   ffmpeg, local, no credits. Skill: .claude/skills/imessage-video -> ../../imessage-video
 agent-video-style-kit/ # Cut30's title/caption style kit (kit/, unmodified, source cut30.co/guides/agent-video-style-kit) + render.ts

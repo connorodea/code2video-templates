@@ -1,0 +1,517 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/connorodea/code2video-templates/gta-production-pilot/schema.json",
+  "title": "GTA production pilot scene specification",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "demo": {
+          "type": "boolean"
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "title",
+        "demo",
+        "seed"
+      ]
+    },
+    "video": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 320,
+          "maximum": 3840,
+          "multipleOf": 2
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 320,
+          "maximum": 3840,
+          "multipleOf": 2
+        },
+        "fps": {
+          "enum": [
+            24,
+            25,
+            30,
+            50,
+            60
+          ]
+        },
+        "duration_frames": {
+          "type": "integer",
+          "minimum": 30,
+          "maximum": 18000
+        }
+      },
+      "required": [
+        "width",
+        "height",
+        "fps",
+        "duration_frames"
+      ]
+    },
+    "style": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "background": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "foreground": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "accent": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "secondary": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "muted": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "safe_margin": {
+          "type": "number",
+          "minimum": 0.04,
+          "maximum": 0.12
+        },
+        "caption_y": {
+          "type": "number",
+          "minimum": 0.65,
+          "maximum": 0.88
+        },
+        "font_regular": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "font_bold": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        }
+      },
+      "required": [
+        "background",
+        "foreground",
+        "accent",
+        "secondary",
+        "muted",
+        "safe_margin",
+        "caption_y"
+      ]
+    },
+    "captions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_words": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "gap_seconds": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 1
+        },
+        "max_lines": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2
+        }
+      },
+      "required": [
+        "max_words",
+        "gap_seconds",
+        "max_lines"
+      ]
+    },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sample_rate": {
+          "const": 48000
+        },
+        "voice_gain": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "music_gain": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "sfx_gain": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "bpm": {
+          "type": "number",
+          "minimum": 50,
+          "maximum": 180
+        }
+      },
+      "required": [
+        "sample_rate",
+        "voice_gain",
+        "music_gain",
+        "sfx_gain",
+        "bpm"
+      ]
+    },
+    "narration": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mode": {
+              "const": "synthetic"
+            },
+            "voice": {
+              "const": "slt"
+            },
+            "lines": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 100,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "start_frame": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100000
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 600
+                  }
+                },
+                "required": [
+                  "start_frame",
+                  "text"
+                ]
+              }
+            }
+          },
+          "required": [
+            "mode",
+            "voice",
+            "lines"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mode": {
+              "const": "file"
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "captions_path": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            },
+            "captions_format": {
+              "enum": [
+                "auto",
+                "deepgram",
+                "words",
+                "srt"
+              ]
+            },
+            "offset_seconds": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 600
+            },
+            "channel": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 15
+            },
+            "license": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "credit": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            }
+          },
+          "required": [
+            "mode",
+            "path",
+            "captions_path",
+            "captions_format",
+            "offset_seconds",
+            "channel",
+            "license",
+            "credit"
+          ]
+        }
+      ]
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,39}$"
+          },
+          "kind": {
+            "enum": [
+              "title",
+              "route",
+              "telemetry",
+              "outro"
+            ]
+          },
+          "start_frame": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000
+          },
+          "duration_frames": {
+            "type": "integer",
+            "minimum": 15,
+            "maximum": 18000
+          },
+          "kicker": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "subtitle": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "transition_in": {
+            "enum": [
+              "cut",
+              "wipe",
+              "dissolve"
+            ]
+          },
+          "transition_frames": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 120
+          },
+          "background": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": [
+                  "synthetic",
+                  "video",
+                  "image"
+                ]
+              },
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2048
+              },
+              "fit": {
+                "enum": [
+                  "cover",
+                  "contain"
+                ]
+              },
+              "in_seconds": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 86400
+              },
+              "license": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              },
+              "credit": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              }
+            },
+            "required": [
+              "kind"
+            ],
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "video",
+                        "image"
+                      ]
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "path",
+                    "license",
+                    "credit"
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "synthetic"
+                    }
+                  }
+                },
+                "then": {
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "path"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "in_seconds"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "route": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 12,
+            "items": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "metrics": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 24
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": -1000000,
+                  "maximum": 1000000
+                },
+                "unit": {
+                  "type": "string",
+                  "maxLength": 12
+                }
+              },
+              "required": [
+                "label",
+                "value",
+                "unit"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "start_frame",
+          "duration_frames",
+          "kicker",
+          "title",
+          "subtitle",
+          "transition_in",
+          "transition_frames",
+          "background"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "project",
+    "video",
+    "style",
+    "captions",
+    "audio",
+    "narration",
+    "scenes"
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "project": {
+    "title": "GTA / FIELD NOTES",
+    "demo": true,
+    "seed": 7
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration_frames": 720
+  },
+  "style": {
+    "background": "#101722",
+    "foreground": "#f4f2ed",
+    "accent": "#66d9cf",
+    "secondary": "#ff997e",
+    "muted": "#9ba9ba",
+    "safe_margin": 0.055,
+    "caption_y": 0.84
+  },
+  "captions": {
+    "max_words": 4,
+    "gap_seconds": 0.45,
+    "max_lines": 2
+  },
+  "audio": {
+    "sample_rate": 48000,
+    "voice_gain": 0.85,
+    "music_gain": 0.11,
+    "sfx_gain": 0.32,
+    "bpm": 100
+  },
+  "narration": {
+    "mode": "synthetic",
+    "voice": "slt",
+    "lines": [
+      {
+        "start_frame": 36,
+        "text": "Every route starts with a question."
+      },
+      {
+        "start_frame": 213,
+        "text": "Find the turn. Read the city."
+      },
+      {
+        "start_frame": 393,
+        "text": "Track the details. Follow the signal."
+      },
+      {
+        "start_frame": 573,
+        "text": "Shape the story. Make the next cut."
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "id": "title",
+      "kind": "title",
+      "start_frame": 0,
+      "duration_frames": 180,
+      "kicker": "GTA PRODUCTION PILOT / 001",
+      "title": "GTA\nFIELD NOTES",
+      "subtitle": "Every route starts with a question.",
+      "transition_in": "cut",
+      "transition_frames": 0,
+      "background": {
+        "kind": "synthetic"
+      }
+    },
+    {
+      "id": "route",
+      "kind": "route",
+      "start_frame": 180,
+      "duration_frames": 180,
+      "kicker": "01 / THE ROUTE",
+      "title": "READ THE\nROUTE",
+      "subtitle": "A city. A turn. A new possibility.",
+      "transition_in": "wipe",
+      "transition_frames": 12,
+      "background": {
+        "kind": "synthetic"
+      },
+      "route": [
+        [
+          0.1,
+          0.75
+        ],
+        [
+          0.32,
+          0.75
+        ],
+        [
+          0.32,
+          0.46
+        ],
+        [
+          0.63,
+          0.46
+        ],
+        [
+          0.63,
+          0.18
+        ],
+        [
+          0.88,
+          0.18
+        ]
+      ]
+    },
+    {
+      "id": "telemetry",
+      "kind": "telemetry",
+      "start_frame": 360,
+      "duration_frames": 180,
+      "kicker": "02 / THE DETAIL",
+      "title": "FOLLOW THE\nSIGNAL",
+      "subtitle": "Small details. A different story.",
+      "transition_in": "dissolve",
+      "transition_frames": 12,
+      "background": {
+        "kind": "synthetic"
+      },
+      "metrics": [
+        {
+          "label": "ROUTE DISTANCE",
+          "value": 2.4,
+          "unit": "KM"
+        },
+        {
+          "label": "SIGNAL",
+          "value": 92,
+          "unit": "%"
+        },
+        {
+          "label": "CHECKPOINT",
+          "value": 3,
+          "unit": "/ 5"
+        }
+      ]
+    },
+    {
+      "id": "outro",
+      "kind": "outro",
+      "start_frame": 540,
+      "duration_frames": 180,
+      "kicker": "03 / THE NEXT CUT",
+      "title": "BUILD THE\nNEXT CUT",
+      "subtitle": "Your footage. Your voice. Your direction.",
+      "transition_in": "wipe",
+      "transition_frames": 12,
+      "background": {
+        "kind": "synthetic"
+      }
+    }
+  ]
+}
